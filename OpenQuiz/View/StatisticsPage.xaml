@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="OpenQuiz.View.StatisticsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenQuiz.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Name="QuestionPanel"
+                    Padding="24"
+                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                    VerticalAlignment="Top">
+            <StackPanel>
+                <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                       Margin="0,0,0,8">Dictionary</TextBlock>
+                <StackPanel Margin="0,0,0,24">
+                    <TextBlock Style="{StaticResource SubtitleTextBlockStyle}">Highest Streak</TextBlock>
+                    <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                           Text="{ x:Bind Dictionary.HighestStreak }"
+                           Name="GenkiScoreBlock"/>
+                    <TextBlock Style="{StaticResource SubtitleTextBlockStyle}">Accuracy</TextBlock>
+                    <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                               Text="{x:Bind Dictionary.Accuracy}"
+                               Name="GenkiAccuracyBlock"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

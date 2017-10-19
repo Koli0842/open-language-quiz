@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="OpenQuiz.DictionaryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenQuiz"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:OpenQuiz.Models"
+    mc:Ignorable="d">
+
+    <Page.TopAppBar>
+        <CommandBar Margin="48,0,0,0">
+            <AppBarButton Name="StreakButton"
+                          Content="{x:Bind score.CurrentStreak, Mode=OneWay}"></AppBarButton>
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <ScrollViewer>
+        <StackPanel Name="QuestionPanel"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                VerticalAlignment="Center">
+
+            <ProgressBar Name="LoadingProgressBar"
+                     Width="400"
+                     IsIndeterminate="True"/>
+
+            <TextBlock Name="QuestionBox"
+                   FontSize="56"
+                   Width="576"
+                   TextAlignment="Center"
+                   Text="{x:Bind Question.Word.Query, Mode=OneWay}"/>
+
+            <GridView Name="AnswerGrid"
+                  ItemsSource="{x:Bind Question.Choices, Mode=OneWay}"
+                  Width="320"
+                  VerticalContentAlignment="Center">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Word">
+                        <Button Width="316" Height="64" FontSize="20"
+                            Style="{StaticResource NoHover}"
+                            Tag="{x:Bind }"
+                            Content="{x:Bind Result}"
+                            Click="CheckCorrect"/>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,21 @@
+﻿<ContentDialog
+    x:Class="OpenQuiz.AddDictionaryDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenQuiz"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Add Dictionary"
+    PrimaryButtonText="Add"
+    CloseButtonText="Close"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+
+    <StackPanel>
+        <TextBox Name="UserDictionaryName"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock/>
+            <Button Content="Browse" Click="BrowseUserDictionary_Click"/>
+        </StackPanel>
+    </StackPanel>
+</ContentDialog>
