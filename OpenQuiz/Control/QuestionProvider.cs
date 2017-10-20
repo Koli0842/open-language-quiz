@@ -34,18 +34,15 @@ namespace OpenQuiz.Control
 
         public Question Next()
         {
-            Word word = GetRandomWord();
-            List<Word> choices = new List<Word>
-            {
-                word
-            };
-            FillWithDistinct(choices);
+            List<Word> choices = CreateDistinctChoices();
+            Word word = GetRandomWord(choices);
 
-            return new Question(word, choices.OrderBy(c => random.Next()).ToList());
+            return new Question(word, choices);
         }
 
-        private void FillWithDistinct(List<Word> choices)
+        private List<Word> CreateDistinctChoices()
         {
+            List<Word> choices = new List<Word>();
             while (choices.Count < settings.ChoiceCount)
             {
                 Word word = GetRandomWord();
@@ -53,11 +50,17 @@ namespace OpenQuiz.Control
                 if(!choices.Contains(word))
                     choices.Add(word);
             }
+            return choices;
         }
 
         private Word GetRandomWord()
         {
-            return dictionary[random.Next(dictionary.Count)];
+            return GetRandomWord(dictionary);
+        }
+
+        private Word GetRandomWord(List<Word> choices)
+        {
+            return choices[random.Next(choices.Count)];
         }
     }
 }
