@@ -43,7 +43,7 @@ namespace OpenQuiz.Control
         private List<Word> CreateDistinctChoices()
         {
             List<Word> choices = new List<Word>();
-            while (choices.Count < settings.ChoiceCount)
+            while (choices.Count < GetPossibleChoiceCount())
             {
                 Word word = GetRandomWord();
 
@@ -51,6 +51,16 @@ namespace OpenQuiz.Control
                     choices.Add(word);
             }
             return choices;
+        }
+
+        private int GetPossibleChoiceCount()
+        {
+            int size = settings.ChoiceCount;
+            if(dictionary.Count < size)
+            {
+                size = dictionary.Count;
+            }
+            return size;
         }
 
         private Word GetRandomWord()
