@@ -1,6 +1,8 @@
-﻿namespace OpenQuiz.Models
+﻿using System;
+
+namespace OpenQuiz.Model
 {
-    class Word
+    class Word : IEquatable<Word>
     {
         private string query;
         private string result;
@@ -15,6 +17,11 @@
         {
             get;
             set;
+        }
+
+        public bool Equals(Word other)
+        {
+            return query == other.query || result == other.result;
         }
     }
 }

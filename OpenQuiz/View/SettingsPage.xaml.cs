@@ -1,10 +1,8 @@
 ﻿using OpenQuiz.Control;
-using OpenQuiz.Models;
+using OpenQuiz.Model;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using Windows.ApplicationModel;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;

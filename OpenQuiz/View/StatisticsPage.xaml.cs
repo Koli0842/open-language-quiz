@@ -1,4 +1,4 @@
-﻿using OpenQuiz.Models;
+﻿using OpenQuiz.Model;
 using System.ComponentModel;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace OpenQuiz.Models
+namespace OpenQuiz.Model
 {
     class Question : INotifyPropertyChanged
     {

@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel;
 
-namespace OpenQuiz.Models
+namespace OpenQuiz.Model
 {
     class Score : INotifyPropertyChanged
     {

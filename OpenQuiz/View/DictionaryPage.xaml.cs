@@ -1,5 +1,5 @@
 ﻿using OpenQuiz.Control;
-using OpenQuiz.Models;
+using OpenQuiz.Model;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;

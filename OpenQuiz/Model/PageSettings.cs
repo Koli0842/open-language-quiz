@@ -1,6 +1,6 @@
 ﻿using OpenQuiz.Control;
 
-namespace OpenQuiz.Models
+namespace OpenQuiz.Model
 {
     class PageSettings
     {

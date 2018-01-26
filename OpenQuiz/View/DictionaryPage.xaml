@@ -5,7 +5,7 @@
     xmlns:local="using:OpenQuiz"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:model="using:OpenQuiz.Models"
+    xmlns:model="using:OpenQuiz.Model"
     mc:Ignorable="d">
 
     <Page.TopAppBar>
